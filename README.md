@@ -14,7 +14,7 @@ This is a fork of https://github.com/andris9/node-gearman/watchers with a quick 
 
 Install through *npm*
 
-    npm install node-gearman
+    npm install node-gearman-ms
 
 ## Usage
 

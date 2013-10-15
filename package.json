@@ -1,7 +1,7 @@
 {
     "name": "node-gearman-ms",
     "description": "Simple Gearman client/worker module for Node.JS with connections to multiple job server",
-    "version": "0.2.2",
+    "version": "0.2.4",
     "author" : "Ignacio Martín Oya",
     "maintainers":[
         {
