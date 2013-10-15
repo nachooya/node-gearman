@@ -3,7 +3,7 @@ var Gearman = require("../lib/gearman"),
 
 // CREATE INSTANCE
 
-var gearman = new Gearman("localhost");
+var gearman = new Gearman(["localhost"]);
 
 exports["Test Connection"] = {
     
@@ -46,7 +46,7 @@ exports["Worker and Client"] = {
 
     setUp: function(callback){
 
-        this.gearman = new Gearman("localhost");
+        this.gearman = new Gearman(["localhost"]);
         this.gearman.on("connect", function(){
             callback();
         });
@@ -132,7 +132,7 @@ exports["Worker and Client"] = {
 exports["Job timeout"] = {
     setUp: function(callback){
 
-        this.gearman = new Gearman("localhost");
+        this.gearman = new Gearman(["localhost"]);
         this.gearman.on("connect", function(){
             callback();
         });

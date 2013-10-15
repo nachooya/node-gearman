@@ -1,14 +1,14 @@
-# node-gearman
+# node-gearman-ms
+
+(ms stands for Multi Server :-P )
+
+This is a fork of https://github.com/andris9/node-gearman/watchers with a quick hack to allows workers to connect to multiple job serves:
+
+ * It manages auto-reconnection to servers.
+ * Only one job at time.
+ * Explicit connection, ie: gearman.connect() is now mandatory.
 
 **node-gearman** is an extremely simple Gearman client/worker module for Node.JS. You can register workers and you can submit jobs, that's all about it.
-
-[![Build Status](https://secure.travis-ci.org/andris9/node-gearman.png)](http://travis-ci.org/andris9/node-gearman)
-
-**NB!** Breaking API change - `'connected'` events etc are now called `'connect'`.
-
-## Support node-gearman development
-
-[![Donate to author](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DB26KWR2BQX5W)
 
 ## Installation
 
@@ -18,18 +18,18 @@ Install through *npm*
 
 ## Usage
 
-See [examples](https://github.com/andris9/node-gearman/tree/master/examples) folder for sample scripts
+See [examples](https://github.com/nachooyas/node-gearman/tree/master/examples) folder for sample scripts
 
 ## Connect to a Gearman server
 
 Set up connection data and create a new `Gearman` object
 
     var Gearman = require("node-gearman");
-    var gearman = new Gearman(hostname, port);
+    var gearman = new Gearman([{hostname1, port1}, {hostname2, port2}....]);
 
 Where `hostname` defaults to `"localhost"` and `port` to `4730`
 
-This doesn't actually create the connection yet. Connection is created when needed but you can force it with `gearman.connect()`
+This doesn't actually create the connection yet. Connection is created with `gearman.connect()`
 
     var gearman = new Gearman(hostname, port);
     gearman.connect();

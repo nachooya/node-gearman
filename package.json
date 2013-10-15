@@ -1,18 +1,18 @@
 {
-    "name": "node-gearman",
-    "description": "Simple Gearman client/worker module for Node.JS",
+    "name": "node-gearman-ms",
+    "description": "Simple Gearman client/worker module for Node.JS with connections to multiple job server",
     "version": "0.2.2",
-    "author" : "Andris Reinman",
+    "author" : "Ignacio Martín Oya",
     "maintainers":[
         {
-            "name":"andris",
-            "email":"andris@node.ee"
+            "name":"nachooya",
+            "email":"nachooya@gmail.com"
         }
     ],
-    "homepage": "http://github.com/andris9/node-gearman",
+    "homepage": "https://github.com/nachooya/node-gearman",
     "repository" : {
         "type" : "git",
-        "url" : "http://github.com/andris9/node-gearman.git"
+        "url" : "https://github.com/nachooya/node-gearman.git"
     },
     "scripts":{
         "test": "node ./run_tests.js"
@@ -24,7 +24,7 @@
     "licenses" : [
         {
             "type": "MIT",
-            "url": "http://github.com/andris9/gearman/blob/master/LICENSE"
+            "url": "https://github.com/nachooya/node-gearman/blob/master/LICENSE"
         }
     ],
     "engine": {
