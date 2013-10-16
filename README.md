@@ -25,7 +25,7 @@ See [examples](https://github.com/nachooyas/node-gearman/tree/master/examples) f
 Set up connection data and create a new `Gearman` object
 
     var Gearman = require("node-gearman");
-    var gearman = new Gearman([{hostname1, port1}, {hostname2, port2}....]);
+    var gearman = new Gearman([{hostname1, port1}, {hostname2, port2}....], debug, verbose);
 
 Where `hostname` defaults to `"localhost"` and `port` to `4730`
 
@@ -45,7 +45,7 @@ The following events can be listened for a `Gearman` object:
 
 Example:
 
-    var gearman = new Gearman(hostname, port);
+    var gearman = new Gearman(hostname, port, debug, verbose);
     gearman.on("connect", function(){
         console.log("Connected to the server!");
     });
@@ -62,7 +62,7 @@ Jobs can be submitted with `gearman.submitJob(name, payload)` where `name` is th
 
 Example:
 
-    var gearman = new Gearman(hostname, port);
+    var gearman = new Gearman(hostname, port, debug, verbose);
     var job = gearman.submitJob("reverse", "test string");
 
     job.on("data", function(data){
@@ -89,7 +89,7 @@ Worker function `callback` gets two parameters - `payload` (received data as a B
 
 Example:
 
-    var gearman = new Gearman(hostname, port);
+    var gearman = new Gearman(hostname, port, debug, verbose);
 
     gearman.registerWorker("reverse", function(payload, worker){
         if(!payload){
